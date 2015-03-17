@@ -24,7 +24,7 @@ body {
 	text-decoration: underline;
 }
 
-.rssHeader { padding: 1.2em 0; text-align: center; text-transform: uppercase; font-weight: 600;}
+.rssHeader { padding: 1.2em 0; text-align: center; text-transform: uppercase; font-weight: 600; display: none;}
 
 .rssBody {  }
 .rssBody ul { list-style: none; }
@@ -56,6 +56,7 @@ body {
 .rssRow .rssMedia {
 	padding: 0.5em;
 	font-size: 1em;
+	display: none;
 }
 
 .rssBody ul, .rssRow {
