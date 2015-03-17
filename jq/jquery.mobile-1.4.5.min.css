@@ -9,3 +9,16 @@
 .ui-btn {
   font-size: 20px !important;
  }
+ 
+.ui-collapsible-inset.ui-collapsible-themed-content .ui-collapsible-content {
+  border-left-width: 0px !important;
+  border-right-width: 0px !important;
+}
+
+.ui-collapsible-content {
+  padding: 0px !important;
+}
+
+.ui-collapsible-themed-content .ui-collapsible-content {
+  border-bottom-width: 0px !important;
+ }

@@ -36,6 +36,14 @@ $(document).ready(function () {
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function () {
+	$('#rssvillage').rssfeed('http://www.the-village.ru/feeds/posts.atom', {
+	limit: 20
+	});
+});
+</script>
+
 </head>
 <body>
 
@@ -51,6 +59,10 @@ $(document).ready(function () {
 <div id="rssmeduza"></div>
 </div>
 <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+<h4>The Village</h4>
+<div id="rssvillage"></div>
+</div>
+<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
 <h4>Hopes & Fears</h4>
 <div id="rsshandf"></div>
 </div>
@@ -60,24 +72,7 @@ $(document).ready(function () {
 </div>
 </div>
 
-
-<div data-role="footer">
-<h4>...</h4>
 </div>
-
-</div>
-
-<!-- <div data-role="page" id="contentPage">
-
-<div data-role="header">
-<a href="#mainPage" data-rel="back">Home</a>
-<h1></h1>
-</div>
-
-<div data-role="content" id="entryText">
-</div>
-
-</div>-->
 
 </body>
 </html>
