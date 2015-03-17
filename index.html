@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 <script type="text/javascript">
 $(document).ready(function () {
-	$('#rsstc').rssfeed('http://feeds.feedburner.com/TechCrunch/startups', {
+	$('#rssmeduza').rssfeed('https://meduza.io/rss/all', {
 	limit: 20
 	});
 });
@@ -36,6 +36,8 @@ $(document).ready(function () {
 });
 </script>
 
+<script src='//mediametrics.ru/partner/inject/inject.js' type='text/javascript' id='MediaMetricsInject' data-adaptive='true' data-bgcolor='FFFFFF' data-bordercolor='ffffff' data-linkscolor='#9D6043' data-transparent='' data-rows='10' data-inline='' data-font='middle' data-fontfamily='roboto' data-border='' data-borderwidth='1' data-alignment='vertical' data-country='ua' data-site='mmet/github_com'> </script>
+
 </head>
 <body>
 
@@ -46,7 +48,10 @@ $(document).ready(function () {
 </div>
 
 <div data-role="content">
-<div id="rsstc"></div>
+<div id="MediaMetricsInject">
+</div>
+<hr>
+<div id="rssmeduza"></div>
 <hr>
 <div id="rsshandf"></div>
 <hr>
