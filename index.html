@@ -32,8 +32,8 @@ $(document).ready(function () {
 
 <script type="text/javascript">
 $(document).ready(function () {
-	$('#rsshandf').rssfeed('http://www.hopesandfears.com/feeds/posts.atom', {
-	limit: 10,
+	$('#rssbulletin').rssfeed('https://getbulletin.wordpress.com/feed/', {
+	limit: 15,
 	dateformat: 'dd MMMM — hh:mm'
 	});
 });
@@ -57,29 +57,36 @@ $(document).ready(function () {
 });
 </script>
 
-<script>
-  $( "#refreshnews" ).on( "click", function() {
-    $.mobile.loadPage( "index.html");
-  });
+<script type="text/javascript">
+$(function() {
+    $(window).scroll(function() {
+        if($(this).scrollTop() != 0) {
+            $('#toTop').fadeIn();    
+        } else {
+            $('#toTop').fadeOut();
+        }
+    });
+ 
+    $('#toTop').click(function() {
+        $('body,html').animate({scrollTop:0},800);
+    });    
+});
 </script>
 
-<script>
-            $(document).on('pageinit', '#index', function(){ 
-                $(document).on('click', '#change', function(){ 
-                    $.mobile.pageContainer.pagecontainer( "change", "index.html", { reload: true} );
-                });
-            });
-        </script>
 </head>
 <body>
 
 <div data-role="page" id="index">
-
-<div data-role="header" data-position="fixed">
+<div data-role="header">
 <!--<button id="change" class="ui-nodisc-icon ui-alt-icon ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-refresh ui-btn-icon-notext">refresh</button>-->
 <h1>Bulletin</h1>
 </div>
 <div data-role="content">
+
+<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-collapsed="false">
+<h4>Bulletin Picks</h4>
+<div id="rssbulletin"></div>
+</div>
 <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
 <h4>Meduza</h4>
 <div id="rssmeduza"></div>
@@ -93,15 +100,13 @@ $(document).ready(function () {
 <div id="rssvillage"></div>
 </div>
 <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
-<h4>Hopes & Fears</h4>
-<div id="rsshandf"></div>
-</div>
-<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
 <h4>Огеральд</h4>
 <div id="rssoherald"></div>
 </div>
 </div>
 
+<div id="toTop" class="ui-nodisc-icon ui-alt-icon ui-btn ui-shadow ui-corner-all ui-icon-arrow-u ui-btn-icon-notext ui-btn-inline">Top</div>​
+<button id="toTop" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-arrow-u">arrow-u</button>
 </div>
 
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter29148395 = new Ya.Metrika({id:29148395, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/29148395" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->

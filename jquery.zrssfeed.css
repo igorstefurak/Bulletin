@@ -76,3 +76,5 @@ body {
 .ui-header .ui-title, .ui-footer .ui-title {
 	color: #9D6043;
 }
+
+#toTop { position: fixed; bottom: 50px; right: 30px; width: 50px; cursor: pointer; display: none;}​
