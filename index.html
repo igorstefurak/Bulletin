@@ -15,7 +15,8 @@
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#rssoherald').rssfeed('http://oherald.me/feed/', {
-	limit: 10
+	limit: 10,
+	dateformat: 'dd MMMM — hh:mm'
 	});
 });
 </script>
@@ -23,7 +24,8 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#rssmeduza').rssfeed('https://meduza.io/rss/all', {
-	limit: 30
+	limit: 20,
+	dateformat: 'dd MMMM — hh:mm'
 	});
 });
 </script>
@@ -31,7 +33,8 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#rsshandf').rssfeed('http://www.hopesandfears.com/feeds/posts.atom', {
-	limit: 20
+	limit: 10,
+	dateformat: 'dd MMMM — hh:mm'
 	});
 });
 </script>
@@ -39,7 +42,8 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#rssvillage').rssfeed('http://www.the-village.ru/feeds/posts.atom', {
-	limit: 20
+	limit: 20,
+	dateformat: 'dd MMMM — hh:mm'
 	});
 });
 </script>
@@ -47,20 +51,34 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#rssma').rssfeed('http://platfor.ma/rss/type_ukrnet', {
-	limit: 20
+	limit: 10,
+	dateformat: 'dd MMMM — hh:mm'
 	});
 });
 </script>
 
+<script>
+  $( "#refreshnews" ).on( "click", function() {
+    $.mobile.loadPage( "index.html");
+  });
+</script>
+
+<script>
+            $(document).on('pageinit', '#index', function(){ 
+                $(document).on('click', '#change', function(){ 
+                    $.mobile.pageContainer.pagecontainer( "change", "index.html", { reload: true} );
+                });
+            });
+        </script>
 </head>
 <body>
 
-<div data-role="page" id="mainPage">
+<div data-role="page" id="index">
 
-<div data-role="header">
+<div data-role="header" data-position="fixed">
+<button id="change" class="ui-nodisc-icon ui-alt-icon ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-refresh ui-btn-icon-notext">refresh</button>
 <h1>Bulletin</h1>
 </div>
-
 <div data-role="content">
 <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
 <h4>Meduza</h4>
@@ -85,6 +103,8 @@ $(document).ready(function () {
 </div>
 
 </div>
+
+<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter29148395 = new Ya.Metrika({id:29148395, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/29148395" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 
 </body>
 </html>
